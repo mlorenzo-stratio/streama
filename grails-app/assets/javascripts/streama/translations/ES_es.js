@@ -11,23 +11,23 @@ angular.module('streama.translations').config(function ($translateProvider) {
 			PASSWORD: 'Contraseña',
 			FIRST_TIME_HINT: '¿Es tu primera vez? Prueba \'admin\' en ambos campos.',
 			SUBMIT: 'Entrar',
-      SESSION_EXPIRED: 'Su sesión expiró desde su última actividad. Por favor inicie sesión de nuevo.'
+      SESSION_EXPIRED: 'Su sesión expiró desde la última actividad. Por favor inicie sesión de nuevo.'
 		},
 		DASHBOARD: {
-			TITLE: 'Panel de control',
-			NEW_RELEASES: 'Nuevas Publicaciones',
-			CONTINUE_WATCHING: 'Continuar Viendo',
-			DISCOVER_SHOWS: 'Descubre Series',
-			DISCOVER_MOVIES: 'Descubre Películas',
+			TITLE: 'Inicio',
+			NEW_RELEASES: 'Nuevas publicaciones',
+			CONTINUE_WATCHING: 'Continuar viendo',
+			DISCOVER_SHOWS: 'Jornadas y simposios',
+			DISCOVER_MOVIES: 'Conferencias y entrevistas',
 			DISCOVER_OTHER_VIDEOS: 'Descubre otros vídeos',
 			SORT: 'Ordenar:',
-			SEARCH_BY_NAME: 'Buscar por Nombre...',
-			FILTER_BY_TAG: 'Filtrar por Etiqueta...',
+			SEARCH_BY_NAME: 'Buscar por título...',
+			FILTER_BY_TAG: 'Filtrar por etiqueta...',
 			BROWSE_GENRES: 'Buscar',
-			LOOKING_AT_GENRE: 'Estás explorando el género:',
-			MARK_COMPLETED: 'Marcar como Completado',
-			NO_TVSHOWS_FOUND: 'No se han encontrado Series',
-			NO_MOVIES_FOUND: 'No se han encontrado Películas'
+			LOOKING_AT_GENRE: 'Estás explorando la categoría:',
+			MARK_COMPLETED: 'Marcar como visto',
+			NO_TVSHOWS_FOUND: 'No se han encontrado jornadas y/o simposios',
+			NO_MOVIES_FOUND: 'No se han encontrado conferencias y/o entrevistas'
 		},
 		VIDEO: {
 			RELEASED: 'Publicado',
@@ -35,8 +35,8 @@ angular.module('streama.translations').config(function ($translateProvider) {
 			RATING: 'Puntuación',
 			VOTES: 'Votos',
 			OVERVIEW: 'Sinopsis',
-			GENRE: 'Género',
-			TRAILER: 'Trailer',
+			GENRE: 'Categoría',
+			TRAILER: 'Entrevista',
 			SEASON: 'Temporada',
       NO_SUBTITLE: 'Sin subtítulos'
 		},
@@ -57,7 +57,7 @@ angular.module('streama.translations').config(function ($translateProvider) {
     CREATE_BTN: 'Crear',
     CANCEL_BTN: 'Cancelar',
     DELETE_BTN: 'Borrar',
-    ENTER_NAME: 'Ingrese su nombre',
+    ENTER_NAME: 'Introduzca su nombre',
     EDIT_PROFILE: 'Editar perfil',
     CREATE_PROFILE: 'Crear perfil',
 		ADMIN: 'Admin',
@@ -87,21 +87,21 @@ angular.module('streama.translations').config(function ($translateProvider) {
 			SAVE: 'Guardar Perfil',
 			OLD_PASS: 'Antigua Contraseña',
 			NEW_PASS: 'Nueva Contraseña',
-			NEW_PASS_PLACEHOLDER: 'Nueva Contraseña  (min. 6 Caracteres)',
-			REPEAT_PASS: 'Repite tu Contraseña',
-			SAVE_PASS: 'Guardar Nueva Contraseña',
+			NEW_PASS_PLACEHOLDER: 'Nueva contraseña  (min. 6 Caracteres)',
+			REPEAT_PASS: 'Repite tu contraseña',
+			SAVE_PASS: 'Guardar nueva contraseña',
       AMOUNT_OF_MEDIA_ENTRIES: 'Cantidad de videos en la página principal (antes de que aparezca el botón "Cargar Más")'
 		},
 
 		SORT_OPTIONS: {
 			AZ: 'A-Z',
 			ZA: 'Z-A',
-			NEWEST_ADDED: 'Añadidos Recientemente',
-			OLDEST_ADDED: 'Añadidos Primero',
-			NEWEST_RELEASED: 'Últimos Publicados',
-			OLDEST_RELEASED: 'Primeros Publicados',
-			NEWEST_AIRED: 'Transmitidos Recientemente',
-			OLDEST_AIRED: 'Transmitidos Primero'
+			NEWEST_ADDED: 'Añadidos recientemente',
+			OLDEST_ADDED: 'Añadidos primero',
+			NEWEST_RELEASED: 'Vídeos más nuevos',
+			OLDEST_RELEASED: 'Vídeos más antiguos',
+			NEWEST_AIRED: 'Transmitidos recientemente',
+			OLDEST_AIRED: 'Transmitidos primero'
 		},
 
 		FAQ: {

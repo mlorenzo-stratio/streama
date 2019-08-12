@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-6">
     <h1>
-      File Manager
+      Administrador de ficheros
     </h1>
   </div>
 </div>
@@ -13,24 +13,24 @@
 
     <div class="btn-group">
       <button class="btn btn-default  btn-sm" ng-class="{'btn-primary': listFilter == 'all'}" ng-click="refreshList('all')">
-        All
+        Todos
       </button>
 
       <button class="btn btn-default  btn-sm" ng-class="{'btn-primary': listFilter == 'noVideos'}" ng-click="refreshList('noVideos')">
-        Only Non-Associated Files
+        Sólo ficheros sin relación
       </button>
 
       <button class="btn btn-default  btn-sm" ng-class="{'btn-primary': listFilter == 'noFile'}" ng-click="refreshList('noFile')">
-        Only Files that don't exist on Hard-Drive
+        Sólo ficheros no existentes
       </button>
 
       <button class="btn btn-default  btn-sm" ng-class="{'btn-primary': listFilter == 'onlyFile'}" ng-click="refreshList('onlyFile')">
-        Files that only exist on Hard-Drive
+        Sólo ficheros existentes
       </button>
     </div>
 
     <button class="btn btn-danger btn-sm pull-right" ng-click="removeMultipleFiles()">
-      Delete Multiple Files
+      Eliminar múltiples ficheros
     </button>
   </div>
 
@@ -47,11 +47,11 @@
     <thead>
     <tr>
       <th></th>
-      <th>Name</th>
-      <th>Uploaded</th>
-      <th>Content-Type</th>
-      <th>File Exists?</th>
-      <th>Associated with</th>
+      <th>Nombre</th>
+      <th>Subido</th>
+      <th>Tipo de contenido</th>
+      <th>¿Fichero existente?</th>
+      <th>Asociado con</th>
       <th></th>
     </tr>
     </thead>

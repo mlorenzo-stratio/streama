@@ -1,7 +1,7 @@
-<button class="btn btn-primary pull-right btn-lg" ng-click="openGenericVideoModal()">Create generic video</button>
+<button class="btn btn-primary pull-right btn-lg" ng-click="openGenericVideoModal()">Crear vídeo genérico</button>
 
 <h1>
-  Other Videos
+  Otros vídeos
   <video-sort-order-dropdown ng-model="currentSort" dropdown-type="'movie'"/>
 </h1>
 
@@ -30,7 +30,7 @@
       <div class="play-text">
         <h4>{{::video.title}}</h4>
         <p>{{::video.release_date.substring(0,4)}}</p>
-        <span class="label label-danger" ng-show="!video.hasFiles"><i class="ion-alert-circled"></i> No Video File yet!</span>
+        <span class="label label-danger" ng-show="!video.hasFiles"><i class="ion-alert-circled"></i> Sin fichero de vídeo aún!</span>
       </div>
 
       <i class="warning-icon ion-alert-circled" ng-show="!video.hasFiles"></i>

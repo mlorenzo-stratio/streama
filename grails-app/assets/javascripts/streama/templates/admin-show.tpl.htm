@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  <li><a ui-sref="admin.shows">Shows</a></li>
+  <li><a ui-sref="admin.shows">Jornadas y simposios</a></li>
   <li class="active">{{show.name}}</li>
 </ul>
 
@@ -28,10 +28,10 @@
             <span uib-dropdown on-toggle="toggled(open)">
               <i class="ion-ios-settings icon-xl" uib-dropdown-toggle></i>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <li><a ng-click="openShowModal()">Edit info</a></li>
-                <li><a ng-click="deleteShow()">Delete TV-Show</a></li>
-                <li><a ng-click="addToCurrentNotification()">Add to Email-Notification</a></li>
-                <li><a ng-click="highlightOnDashboard()">Highlight on Dashboard</a></li>
+                <li><a ng-click="openShowModal()">Editar informacíón</a></li>
+                <li><a ng-click="deleteShow()">Eliminar jornadas y/o simposio</a></li>
+                <li><a ng-click="addToCurrentNotification()">Añadir a notificaciones por Email</a></li>
+                <li><a ng-click="highlightOnDashboard()">Destacar en el Inicio</a></li>
               </ul>
             </span>
         </div>
@@ -42,22 +42,9 @@
 
     <div class="row">
       <div class="col-sm-2">
-        <label>Release Date</label>
+        <label>Fecha de publicación</label>
         <p class="data-display">{{show.first_air_date}}</p>
         <p ng-show="!show.first_air_date" class="data-display fade-50">-</p>
-      </div>
-      <div class="col-sm-2">
-        <label>IMDB Link</label>
-        <p class="data-display" ng-if="show.imdb_id"><a href="http://www.imdb.com/title/{{show.imdb_id}}">{{show.name}}</a></p>
-        <p ng-show="!show.imdb_id" class="data-display fade-50">-</p>
-      </div>
-      <div ng-show="show.vote_average" class="col-sm-2">
-        <label>Rating</label>
-        <p class="data-display">{{show.vote_average}}/10</p>
-      </div>
-      <div ng-show="show.vote_count"class="col-sm-2">
-        <label>Rating Count</label>
-        <p class="data-display">{{show.vote_count}}</p>
       </div>
     </div>
 
@@ -66,19 +53,19 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <label>Overview</label>
+        <label>Sinopsis</label>
         <p class="data-display">{{show.overview}}</p>
-        <p ng-show="!show.overview" class="data-display fade-50">No overview added yet</p>
+        <p ng-show="!show.overview" class="data-display fade-50">Sin sinopsis definida</p>
       </div>
     </div>
 
-    <label>Genre</label>
+    <label>Categoría</label>
     <ul class="genre-list">
       <li class="genre-tag interactive" ng-repeat="genre in show.genre" ui-sref="dash({genreId: genre.id})">
         {{genre.name}}
       </li>
     </ul>
-    <p ng-show="!show.genre.length" class="data-display fade-50">No genre added yet</p>
+    <p ng-show="!show.genre.length" class="data-display fade-50">Sin categoría definida</p>
   </div>
 
 
@@ -93,7 +80,7 @@
 
       <div class="upload-poster" ng-class="{'update-poster': show.poster_image_src}" ng-model="manualPoster" class="btn btn-primary btn-block btn-lg"
            ngf-change="uploadPoster($files)" ngf-select ngf-drop ngf-drag-over-class="dragover">
-        <span class="main-text">Upload Poster</span>
+        <span class="main-text">Subir póster</span>
         <span class="size-info">300x450 px</span>
         <span ng-show="imageUpload.percentage">{{imageUpload.percentage}}%</span>
       </div>
@@ -117,7 +104,7 @@
   <button class="btn btn-primary" ng-click="addNewEpisode()">Add New Episode Manually</button>
   <button class="btn btn-primary" ng-click="fetchEpisodes()" ng-if="!show.manualInput" ng-show="hasMovieDBKey">Fetch Episodes</button>
 
-  <div ng-if="!seasons" class="no-episodes-yet">No Episodes yet</div>
+  <div ng-if="!seasons" class="no-episodes-yet">Sin vídeos aún</div>
 
   <div ng-if="seasons">
     <hr>
@@ -125,7 +112,7 @@
     <div class="season-picker-list">
       <span class="season-picker-item" ng-class="{'active': currentSeason == season}" ng-click="setCurrentSeason(season)"
             ng-repeat="season in seasons | orderBy:number">
-        Season {{season}}
+        Vídeos
       </span>
     </div>
 

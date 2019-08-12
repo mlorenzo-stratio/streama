@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
     <h1>
-      Movies <video-sort-order-dropdown ng-model="vm.movie.sorter" ng-model-options="{getterSetter: true}" dropdown-type="'movie'"/>
+      Conferencias y entrevistas <video-sort-order-dropdown ng-model="vm.movie.sorter" ng-model-options="{getterSetter: true}" dropdown-type="'movie'"/>
     </h1>
 
     <input placeholder="{{vm.searchText}}" type="text" ng-model="vm.movie.filter.title" ng-change="vm.doSearch(vm.movie.filter.title)"
@@ -10,8 +10,7 @@
   <div class="col-md-6">
     <br>
     <div class="btn-group pull-right">
-      <button class="btn btn-primary" ng-click="vm.createFromFiles()">Bulk-Create from file(s)</button>
-      <button class="btn btn-primary" ng-click="vm.openMovieModal()">Create new Movie</button>
+      <button class="btn btn-primary" ng-click="vm.openMovieModal()">Crear nueva conferencia o entrevista</button>
     </div>
   </div>
 </div>
@@ -37,7 +36,7 @@
         <div class="play-text">
           <h4>{{::movie.title}}</h4>
           <p>{{::movie.release_date.substring(0,4)}}</p>
-          <span class="label label-danger" ng-show="!movie.hasFiles"><i class="ion-alert-circled"></i> No Video File yet!</span>
+          <span class="label label-danger" ng-show="!movie.hasFiles"><i class="ion-alert-circled"></i> Sin fichero de vídeo aún!</span>
         </div>
 
         <i class="warning-icon ion-alert-circled" ng-show="!movie.hasFiles"></i>
@@ -54,19 +53,19 @@
 
 <div ng-if="vm.suggestedMovies.length">
   <hr>
-  <h3>Want to add a new Movie?</h3>
+  <h3>¿Quieres añadir una nueva conferencia o entrevista?</h3>
   <div class="media-list similar-media">
     <div class="media-list-item" ng-repeat="movie in vm.suggestedMovies | filter:vm.search | orderBy: '-vote_count'" ng-if="!vm.alreadyAdded(movie)">
       <div class="hover-overlay">
         <div>
-          <button class="btn btn-primary btn-sm btn-block" ng-click="vm.addFromSuggested(movie, true)">Add and Open</button>
-          <button class="btn btn-primary btn-sm btn-block" ng-click="vm.addFromSuggested(movie, false)">Add and Continue</button>
+          <button class="btn btn-primary btn-sm btn-block" ng-click="vm.addFromSuggested(movie, true)">Añadir y abrir</button>
+          <button class="btn btn-primary btn-sm btn-block" ng-click="vm.addFromSuggested(movie, false)">Añadir y continuar</button>
         </div>
       </div>
       <div class="media-item" >
         <img ng-src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}"/>
       </div>
-      <div class="media-meta">Release: {{::movie.release_date.substring(0, 4)}} | <i class="ion-ios-star"></i> {{::movie.vote_average}}</div>
+      <div class="media-meta">Publicación: {{::movie.release_date.substring(0, 4)}}</div>
     </div>
   </div>
 

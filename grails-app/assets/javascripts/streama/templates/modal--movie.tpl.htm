@@ -2,10 +2,10 @@
 
   <div class="modal-body">
     <legend>
-      Movie
+      Nueva conferencia o entrevista
       <button class="btn btn-sm btn-white btn-outline pull-right" ng-show="hasMovieDBKey" ng-click="toggleAddManually()">
-        <span ng-show="!addManually && !movie.id">Add Manually</span>
-        <span ng-show="addManually">Add Automatically</span>
+        <span ng-show="!addManually && !movie.id">Añadir manualmente</span>
+        <span ng-show="addManually">Añadir automáticamente</span>
       </button>
     </legend>
 
@@ -27,12 +27,8 @@
     <div ng-show="movie.apiId || addManually">
       <div class="form-group row-slim">
         <div class="col-sm-2">
-          <label>Release Date</label>
+          <label>Fecha de publicación</label>
           <input type="text" class="form-control input-sm" ng-model="movie.release_date" placeholder="2003-01-23"/>
-        </div>
-        <div class="col-sm-2">
-          <label>IMDB ID</label>
-          <input type="text" class="form-control input-sm" ng-model="movie.imdb_id" placeholder="tt0383126"/>
         </div>
         <div ng-hide="addManually">
           <div class="col-sm-2">
@@ -57,28 +53,24 @@
       </div>
       <div class="form-group row-slim">
         <div class="col-sm-3">
-          <label>YouTube Trailer Key</label>
-          <input type="text" class="form-control input-sm" ng-model="movie.trailerKey"/>
-        </div>
-        <div class="col-sm-3">
-          <label>Timestamp Added</label>
+          <label>Fecha de grabación</label>
           <input type="text" class="form-control input-sm" ng-model="movie.dateCreated"/>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-12">
-          <label>Overview</label>
-          <textarea class="form-control" cols="30" rows="4" ng-model="movie.overview" placeholder="Overview"></textarea>
+          <label>Sinopsis</label>
+          <textarea class="form-control" cols="30" rows="4" ng-model="movie.overview" placeholder="Sinopsis"></textarea>
         </div>
       </div>
 
-      <div ng-hide="addManually">
+      <div>
         <div class="form-group">
           <div class="col-sm-12">
-            <label>Genre</label>
+            <label>Categoría</label>
             <ui-select class="tag-select" multiple ng-model="movie.genre" theme="bootstrap" title="Add Genre">
-              <ui-select-match placeholder="Select Genre...">{{$item.name}}</ui-select-match>
+              <ui-select-match placeholder="Seleccione categoría...">{{$item.name}}</ui-select-match>
               <ui-select-choices repeat="genre in genres | propsFilter: {name: $select.search}">
                 <div class="tag-wrapper">
                   <div class="tag-name" ng-bind-html="genre.name + genre.isTag| highlight: $select.search"></div>
@@ -91,12 +83,12 @@
 
 
 
-      <div class="form-group" ng-show="movie.id">
+      <div class="form-group">
         <div class="col-sm-12">
-          <label>Tags</label>
+          <label>Etiquetas</label>
 
           <ui-select class="tag-select" multiple tagging="tagTransform" ng-model="movie.tags" theme="bootstrap" title="Add Tags" on-select="onTagSelect($item, $model)">
-            <ui-select-match placeholder="Select tag...">{{$item.name}}</ui-select-match>
+            <ui-select-match placeholder="Seleccione etiqueta...">{{$item.name}}</ui-select-match>
             <ui-select-choices repeat="tag in tags | propsFilter: {name: $select.search}">
               <div ng-if="tag.isNew" ng-bind-html="tag.name +' <small>(new)</small>'| highlight: $select.search"></div>
               <div ng-if="!tag.isNew" class="tag-wrapper">
@@ -112,12 +104,12 @@
 
       <div class="form-group" ng-if="movie.backdrop_path">
         <div class="col-sm-6">
-          <label>Image</label>
+          <label>Imagen</label>
           <br/>
           <img ng-src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}"/>
           <br>
           <br>
-          <button class="btn btn-default btn-sm" ng-click="chooseNewBackdrop()">Choose another image</button>
+          <button class="btn btn-default btn-sm" ng-click="chooseNewBackdrop()">Elegir otra imagen</button>
         </div>
       </div>
 
@@ -125,15 +117,15 @@
 
 
 
-      <div class="form-group" ng-if="!movie.backdrop_path && movie.id">
+      <div class="form-group" ng-if="!movie.backdrop_path">
         <div class="col-sm-12">
-          <label>Poster Image</label>
+          <label>Póster</label>
           <br/>
           <div class="row">
             <div class="col-sm-8">
               <div class="upload-poster" ng-class="{'update-poster': movie.poster_image_src}" ng-model="manualPoster" class="btn btn-primary btn-block btn-lg"
                    ngf-change="uploadImage($files, 'poster_image')" ngf-select ngf-drop ngf-drag-over-class="dragover">
-                <span class="main-text">Upload Poster</span>
+                <span class="main-text">Subir póster</span>
                 <span class="size-info">300x450 px</span>
                 <span ng-show="imageUpload.percentage">{{imageUpload.percentage}}%</span>
               </div>
@@ -149,7 +141,7 @@
   </div>
 
   <div class="modal-footer" ng-if="movie.apiId || addManually">
-    <button class="btn btn-success" ng-click="saveMovie(movie)" ng-disabled="!movie.title">Save</button>
-    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-success" ng-click="saveMovie(movie)" ng-disabled="!movie.title">Guardar conferencia o entrevista</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
   </div>
 </form>

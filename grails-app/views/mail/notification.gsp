@@ -206,7 +206,7 @@
               <p style="font-size: 16px;">Recently, the following content was added to Streama</p>
 
               <g:if test="${notificationQueues.findAll{it.movie}}">
-                <h3>New Movies</h3>
+                <h3>Nuevas conferencias y entrevistas</h3>
 
                 <table>
                   <g:each in="${notificationQueues.findAll{it.movie}}" var="notification">
@@ -226,7 +226,7 @@
               </g:if>
 
               <g:if test="${notificationQueues.findAll{it.tvShow}}">
-                <h3>New Tv Shows</h3>
+                <h3>Nuevas jornadas y simposios</h3>
                 <table>
                   <g:each in="${notificationQueues.findAll{it.tvShow}}" var="notification">
                     <tr>

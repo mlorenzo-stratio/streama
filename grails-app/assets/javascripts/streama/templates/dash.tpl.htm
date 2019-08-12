@@ -100,7 +100,7 @@
   <div ng-if="!vm.isDashSectionHidden('discover-shows') && (!$root.currentProfile.isChild || vm.tvShow.list.length)">
     <h3>
       <span ng-show="!$root.selectedGenre">{{'DASHBOARD.DISCOVER_SHOWS' | translate}}</span>
-      <span ng-show="$root.selectedGenre">{{::$root.selectedGenre.name}} TV Shows</span>
+      <span ng-show="$root.selectedGenre">Jornadas y simposios</span>
     </h3>
 
     <div class="row dash-filter">
@@ -110,7 +110,7 @@
       </div>
 
       <div class="col-sm-4">
-        <ui-select class="tag-select" multiple ng-model="vm.tvShow.filter.genre" ng-change="vm.tvShow.setFilter()" theme="bootstrap" title="Filter by Genre">
+        <ui-select class="tag-select" multiple ng-model="vm.tvShow.filter.genre" ng-change="vm.tvShow.setFilter()" theme="bootstrap" title="Filtrar por categoría">
           <ui-select-match placeholder="{{'DASHBOARD.FILTER_BY_GENRE' | translate}}">{{$item.name}}</ui-select-match>
           <ui-select-choices repeat="genre.id as genre in genres | propsFilter: {name: $select.search}">
             <div class="tag-wrapper">
@@ -166,7 +166,7 @@
   <div ng-if="!vm.isDashSectionHidden('discover-movies') && (!$root.currentProfile.isChild || vm.movie.list.length)">
     <h3>
       <span ng-show="!selectedGenre">{{'DASHBOARD.DISCOVER_MOVIES' | translate}}</span>
-      <span ng-show="selectedGenre">{{::selectedGenre.name}} Movies</span>
+      <span ng-show="selectedGenre">Conferencias y entrevistas</span>
      </h3>
 
     <div class="row dash-filter" ng-hide="!vm.movie.filter && !vm.movie.list.length">

@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  <li><a ui-sref="admin.videos">Videos</a></li>
+  <li><a ui-sref="admin.videos">Vídeos</a></li>
   <li class="active">{{video.title}}</li>
 </ul>
 
@@ -25,7 +25,7 @@
             {{video.title}} &nbsp;
             <a ng-show="video.files.length" class="ion-android-arrow-dropright-circle" ui-sref="player({videoId: video.id})"></a>
           </h1>
-          <span class="label label-danger" ng-click="manageFiles(video)" ng-show="!video.files.length"><i class="ion-alert-circled"></i> No Video File yet!</span>
+          <span class="label label-danger" ng-click="manageFiles(video)" ng-show="!video.files.length"><i class="ion-alert-circled"></i> Sin archivo de vídeo aún!</span>
         </div>
 
 
@@ -34,9 +34,9 @@
             <span uib-dropdown on-toggle="toggled(open)">
               <i class="ion-ios-settings icon-xl" uib-dropdown-toggle></i>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <li><a ng-click="openVideoModal()">Edit info</a></li>
-                <li><a ng-click="manageFiles(video)">Manage Files</a></li>
-                <li><a ng-click="delete()">Delete Video</a></li>
+                <li><a ng-click="openVideoModal()">Editar información</a></li>
+                <li><a ng-click="manageFiles(video)">Gestionar ficheros</a></li>
+                <li><a ng-click="delete()">Eliminar vídeo</a></li>
               </ul>
             </span>
           </div>
@@ -48,20 +48,8 @@
 
       <div class="row">
         <div class="col-sm-2">
-          <label>Release Date</label>
+          <label>Fecha de publicación</label>
           <p class="data-display">{{video.release_date}}</p>
-        </div>
-        <div class="col-sm-2">
-          <label>IMDB Link</label>
-          <p class="data-display"><a href="http://www.imdb.com/title/{{video.imdb_id}}">{{video.title}}</a></p>
-        </div>
-        <div class="col-sm-2" ng-show="video.vote_average">
-          <label>Rating</label>
-          <p ng-show="video.vote_average" class="data-display">{{video.vote_average}}/10</p>
-        </div>
-        <div class="col-sm-2" ng-show="video.vote_count">
-          <label>Rating Count</label>
-          <p class="data-display">{{video.vote_count}}</p>
         </div>
       </div>
 
@@ -70,26 +58,26 @@
 
       <div class="row">
         <div class="col-sm-12">
-          <label>Overview</label>
+          <label>Resumen</label>
           <p ng-show="video.overview" class="data-display">{{video.overview}}</p>
-          <p ng-show="!video.overview" class="data-display fade-50">No overview added yet</p>
+          <p ng-show="!video.overview" class="data-display fade-50">Sin resumen definido</p>
         </div>
 
         <br>
 
         <div class="col-sm-12">
-          <label>Genre</label>
+          <label>Categoría</label>
           <ul class="genre-list">
             <li class="genre-tag interactive" ng-repeat="genre in video.genre" ui-sref="dash({genreId: genre.id})">
               {{genre.name}}
             </li>
           </ul>
-          <p ng-show="!video.genre.length" class="data-display fade-50">No genre added yet</p>
+          <p ng-show="!video.genre.length" class="data-display fade-50">Sin categoría definida aún</p>
         </div>
 
         <br>
         <div class="col-sm-12" ng-if="video.trailerKey">
-          <label>Trailer</label>
+          <label>Entrevista</label>
           <br>
           <iframe width="560" height="315" ng-src="{{'https://www.youtube.com/embed/'+video.trailerKey+'?rel=0' | trustResourceUrl}}" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -99,7 +87,7 @@
       <div class="row" ng-show="!video.files.length">
         <hr/>
         <button class="btn btn-danger btn-block btn-lg" ng-click="manageFiles(video)">
-          <i class="ion-alert-circled"></i> No Video File yet! Drop file or click here to add
+          <i class="ion-alert-circled"></i> Sin archivo de vídeo aún! Suelta un fichero o haz click aquí para añadirlo
         </button>
       </div>
 

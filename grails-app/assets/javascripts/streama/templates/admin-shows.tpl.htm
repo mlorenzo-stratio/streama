@@ -9,8 +9,7 @@
   <div class="col-md-6">
     <br>
     <div class="btn-group pull-right">
-      <button class="btn btn-primary" ng-click="createFromFiles()">Bulk-Create from file(s)</button>
-      <button class="btn btn-primary " ng-click="openShowModal()">Create new Show</button>
+      <button class="btn btn-primary " ng-click="openShowModal()">Crear nueva jornada o simposio</button>
     </div>
   </div>
 </div>
@@ -43,8 +42,8 @@
 
       <div class="play-text">
         <h4>{{show.name}}</h4>
-        <p>{{show.first_air_date}} | <i class="ion-ios-star"></i>{{show.vote_average}} </p>
-        <p ng-class="{'label label-danger': !show.episodesWithFilesCount}">{{show.episodesWithFilesCount}}/{{show.episodesCount}} uploaded</p>
+        <p>{{show.first_air_date}}</p>
+        <p>{{show.episodesWithFilesCount}} vídeos</p>
       </div>
 
       <i class="warning-icon ion-alert-circled" ng-show="!show.episodesWithFilesCount"></i>
@@ -53,25 +52,25 @@
 </div>
 
 <div class="text-center" ng-if="tvShow.total > tvShow.list.length">
-  <button class="btn btn-primary btn-outline" ng-click="tvShow.loadMore()">Load more ...</button>
+  <button class="btn btn-primary btn-outline" ng-click="tvShow.loadMore()">Cargar más ...</button>
 </div>
 
 
 <div ng-if="suggestedShows.length">
   <hr>
-  <h3>Want to add a new Show?</h3>
+  <h3>¿Quieres añadir una nueva jornada o simposio?</h3>
   <div class="media-list similar-media">
     <div class="media-list-item" ng-repeat="show in suggestedShows | filter:search | orderBy: '-vote_count'" ng-if="!alreadyAdded(show)">
       <div class="hover-overlay">
         <div>
-          <button class="btn btn-primary btn-sm btn-block" ng-click="addFromSuggested(show, true)">Add and Open</button>
-          <button class="btn btn-primary btn-sm btn-block" ng-click="addFromSuggested(show, false)">Add and Continue</button>
+          <button class="btn btn-primary btn-sm btn-block" ng-click="addFromSuggested(show, true)">Añadir y abrir</button>
+          <button class="btn btn-primary btn-sm btn-block" ng-click="addFromSuggested(show, false)">Añadir y continuar</button>
         </div>
       </div>
       <div class="media-item" >
         <img ng-src="https://image.tmdb.org/t/p/w300/{{show.poster_path}}"/>
       </div>
-      <div class="media-meta">Release: {{::show.release_date.substring(0, 4)}} | <i class="ion-ios-star"></i> {{::show.vote_average}}</div>
+      <div class="media-meta">Publicación: {{::show.release_date.substring(0, 4)}}</div>
     </div>
   </div>
 
