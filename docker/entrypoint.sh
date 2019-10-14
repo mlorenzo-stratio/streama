@@ -1,2 +1,2 @@
 #!/bin/sh
-java -Dgrails.env=$ACTIVE_PROFILE -jar streama.jar
+java -Dgrails.env=$ACTIVE_PROFILE -jar /srv/streama.jar
